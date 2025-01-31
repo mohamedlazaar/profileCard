@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 300px;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .card a {
+            display: inline-block;
+            margin: 5px;
+            text-decoration: underline;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="profile.jpeg" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">Mohamed Lazaar</h2>
+        <p data-testid="jobTitle">Frontend Developer</p>
+        <p data-testid="shortBio">Passionate about building interactive and user-friendly web applications, and aslo for problems solving</p>
+        <p data-testid="currentLocation">Meknes, Morocco</p>
+        <p data-testid="emailAddress">lazzarmohamed10@gmail.com</p>
+        <div data-testid="socialLinks">
+            <a href="https://linkedin.com/in/mohamed-lazaar" target="_blank">LinkedIn</a>
+            <a href="https://github.com/mohamedlazaar" target="_blank">GitHub</a>
+            <a href="https://twitter.com/CodeWith_ML" target="_blank">Twitter</a>
+        </div>
+        <p data-testid="currentTimeUTC" id="utc-time"></p>
+    </div>
+
+    <script>
+        function updateTime() {
+            const utcTimeElement = document.getElementById("utc-time");
+            const now = new Date();
+            utcTimeElement.textContent = `UTC Time: ${now.toUTCString()}`;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
